@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Calculate Mortage</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="contact1">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="images/img-01.png" alt="IMG">
+			</div>
+
+			<div class="contact1-form validate-form">
+				<span class="contact1-form-title">
+					Calculate Mortage
+				</span>
+
+				<div class="wrap-input1 validate-input" data-validate = "Gender is required">
+					<input class="input1" type="text" id="gender" name="gender" placeholder="Male or Female" maxlength="6" required/>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Age is required">
+					<input class="input1" type="number" id="age" name="age" placeholder="age b/w 18-55" min="18" max="55" required/>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="wrap-input1 validate-input" data-validate = "Salary is required">
+					<input class="input1" type="number" id="salary" name="salary" placeholder="salary b/w 0-10000" min="0" max="10000" required/>
+					<span class="shadow-input1"></span>
+				</div>
+
+				<div class="container-contact1-form-btn">
+					<button class="contact1-form-btn" onclick="myFunction()">
+						<span>
+							Calculate
+						</span>
+					</button>
+				</div>
+
+				<div class="wrap-input1 validate-input">
+					<br><p style="
+					font-size: 25px; color: black;">Mortage is:</p>
+					<p id="output" style="font-size: 20px;"></p>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	
+	<script>
+	function myFunction() {
+	
+	  let inpGender = document.getElementById("gender").value;
+	  let inpAge = document.getElementById("age").value;
+	  let inpSalary = document.getElementById("salary").value;
+	
+	  let gender;
+	  if(inpGender == "Male" || inpGender == "male"){
+	  gender = true;
+	  }
+	  else if(inpGender == "Female" || inpGender == "female"){
+	  gender = false;
+	  }
+	  else{
+	  alert("Things are not going smooth|| Lets refresh and try again☻");
+	  }
+	let age = inpAge;
+	if (age < 18 || age > 55){
+	  alert("Things are not going smooth|| Either too young or too old");
+	}
+	var salary;
+	if (inpSalary <= 0) salary = 0;
+	else if(inpSalary >= 10000) salary = 10000;
+	else salary = inpSalary
+	if (gender)
+	document.getElementById("output").innerHTML = ((age >= 18 && age < 35)?(75 * salary) : (age >= 31 && age < 40)?(55 * salary) : (30 * salary));
+	else
+	document.getElementById("output").innerHTML = ((age >= 18 && age < 30)?(75 * salary) : (age >= 31 && age < 40)?(50 * salary) : (35 * salary));
+	}
+	</script>
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
