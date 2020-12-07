@@ -1,3 +1,3 @@
 # MortageCalculator
-Mortage Calculator
-https://AbSamDev.github.io/MortageCalculator/index.html
+
+[Click me to see demo](https://absamdev.github.io/MortageCalculator/MortageCalculator/index.html)
